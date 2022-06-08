@@ -1,6 +1,7 @@
-FROM elasticsearch:7.3.2
+FROM opensearchproject/opensearch:2.0.0
 
-RUN chown -R :elasticsearch /usr/share/elasticsearch/data
+RUN chown -R :opensearch /usr/share/opensearch/data
+RUN /usr/share/opensearch/bin/opensearch-plugin remove opensearch-security
 ENV discovery.type single-node
 
 
